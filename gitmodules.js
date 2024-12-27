@@ -73,8 +73,8 @@ for (const subPath in modules) {
   const branch = (modules[subPath].installBranch || modules[subPath].branch);
   const hasGit = fs.existsSync(path.join(dirPath, '.git'));
   if (!hasGit) continue;
-  console.log(`Switching submodule ${subPath} to branch ${branch}`);
-  ChildProcess.execSync(`git checkout ${branch}`, {
+  console.log(`Switching submodule ${subPath} to branch master`);
+  ChildProcess.execSync(`git checkout master`, {
     cwd: dirPath,
     env,
     stdio: 'inherit'
